@@ -89,7 +89,7 @@ class Line {
   }
 }
 
-const createLine = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
+function createLine (ctx: CanvasRenderingContext2D, width: number, height: number): Line {
   const x = Math.random() * width;
   const y = Math.random() * height;
   const length = Math.random() * 40 + 10;
@@ -98,7 +98,7 @@ const createLine = (ctx: CanvasRenderingContext2D, width: number, height: number
   return new Line(ctx, width, height, x, y, length, angle, speed);
 }
 
-const setGradient = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
+function setGradient(ctx: CanvasRenderingContext2D, width: number, height: number): void {
   const gradient = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, width);
   gradient.addColorStop(0, '#322d63');
   gradient.addColorStop(1, '#635d8e');
